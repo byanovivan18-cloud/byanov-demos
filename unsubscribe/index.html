@@ -1,0 +1,128 @@
+<!doctype html>
+<!-- byanov-optout-page: this marker is how `python main.py doctor` recognises
+     that the address is answered by OUR unsubscribe page and not by a parked
+     domain, a registrar placeholder, or somebody else's site. Do not remove it. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Unsubscribe</title>
+<style>
+  /* Same paper, ink and typefaces as the root page. A visitor who clicks
+     unsubscribe from an email and lands on something that looks like a
+     different company's site has every reason to wonder who has their
+     address — so the two pages are deliberately one thing. */
+  :root { color-scheme: light }
+  body {
+    font: 18px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
+    margin: 0; background: #f2f3ef; color: #16202b;
+    display: flex; align-items: center; justify-content: center; min-height: 100vh;
+  }
+  main {
+    background: #fff; max-width: 32rem; width: calc(100% - 2.5rem);
+    margin: 2rem 0; padding: 1.9rem 1.8rem 1.6rem;
+    border: 1px solid #d5d8d0;
+  }
+  h1 {
+    font: 900 1.25rem/1.2 "Arial Black", "Arial Bold", Arial, sans-serif;
+    letter-spacing: -.02em; margin: 0 0 .8rem;
+  }
+  p { margin: 0 0 1rem }
+  .addr { background: #f2f3ef; padding: .1rem .35rem; word-break: break-all }
+  a.btn {
+    display: block; text-align: center; text-decoration: none;
+    background: #16202b; color: #fff; padding: .85rem 1rem; margin: 1.3rem 0 .5rem;
+    font: 900 1rem/1 "Arial Black", "Arial Bold", Arial, sans-serif;
+  }
+  a.btn:hover { background: #243343 }
+  a.alt { display: inline-block; color: #14508c; font-size: .95rem }
+  .muted { color: #56606d; font-size: .9rem; margin-top: 1.3rem }
+  .hide { display: none }
+  :focus-visible { outline: 2px solid #14508c; outline-offset: 2px }
+</style>
+</head>
+<body>
+<main>
+  <h1>Unsubscribe</h1>
+
+  <div id="ready" class="hide">
+    <p>We will stop emailing <span class="addr" id="who"></span>.</p>
+    <p>Press the button to confirm. It takes one tap and nothing else is needed.</p>
+    <a class="btn" id="go" href="#">Confirm unsubscribe</a>
+    <p><a class="alt" id="alt" href="#"></a></p>
+  </div>
+
+  <div id="incomplete" class="hide">
+    <p>This unsubscribe link is incomplete, so we cannot tell which address to
+       remove.</p>
+    <p>Reply to the email you received with the word <strong>unsubscribe</strong>
+       and the address it was sent to is removed automatically.</p>
+  </div>
+
+  <p class="muted">
+    Sent by <span id="company"></span>. Removal is permanent and no further
+    email is sent to that address.
+  </p>
+</main>
+
+<script>
+(function () {
+  // Values are substituted as JSON literals when this page is published, so a
+  // quote or backslash in any of them cannot break out of the string.
+  var COMPANY = "Byanov Web Solutions";
+  var REPLY_TO = "ivan@byanovwebsolutions3.xyz";
+  var FORM_URL = "";          // "" when no Airtable form is configured
+  var FORM_EMAIL = "Email";
+  var FORM_TOKEN = "Token";
+
+  var params = new URLSearchParams(window.location.search);
+  var email = (params.get("e") || "").trim();
+  var token = (params.get("t") || "").trim();
+
+  document.getElementById("company").textContent = COMPANY;
+
+  if (!email) {
+    document.getElementById("incomplete").classList.remove("hide");
+    return;
+  }
+
+  // Two ways to record the opt-out, both of which cost nothing to run:
+  //
+  //  1. A reply carrying the word "unsubscribe". The pipeline already reads
+  //     replies and suppresses on that word, so this needs no hosting, no form
+  //     and no credential — it is the default for exactly that reason.
+  //  2. An Airtable form with the address and signature filled in and hidden.
+  //     Used when one is configured, because it does not depend on the visitor
+  //     having a mail client set up on the device they clicked from.
+  var mailto = "mailto:" + encodeURIComponent(REPLY_TO)
+    + "?subject=" + encodeURIComponent("unsubscribe")
+    + "&body=" + encodeURIComponent("Please remove " + email + " from your list.");
+
+  var formLink = "";
+  if (FORM_URL) {
+    var sep = FORM_URL.indexOf("?") === -1 ? "?" : "&";
+    formLink = FORM_URL + sep
+      + "prefill_" + encodeURIComponent(FORM_EMAIL) + "=" + encodeURIComponent(email)
+      + "&hide_" + encodeURIComponent(FORM_EMAIL) + "=true"
+      + "&prefill_" + encodeURIComponent(FORM_TOKEN) + "=" + encodeURIComponent(token)
+      + "&hide_" + encodeURIComponent(FORM_TOKEN) + "=true";
+  }
+
+  var primary = formLink || mailto;
+  var secondary = formLink ? mailto : "";
+
+  document.getElementById("who").textContent = email;
+  document.getElementById("go").setAttribute("href", primary);
+  var alt = document.getElementById("alt");
+  if (secondary) {
+    alt.setAttribute("href", secondary);
+    alt.textContent = "Or send us an email instead";
+  } else {
+    alt.parentNode.classList.add("hide");
+  }
+  document.getElementById("ready").classList.remove("hide");
+})();
+</script>
+</body>
+</html>
