@@ -2,38 +2,251 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Byanov Web Solutions</title>
-<meta name="description" content="Small-business websites, built and live in a week.">
+<title>Byanov Web Solutions — small business websites, $500 flat</title>
+<meta name="description" content="Five pages, written for your business and live
+in a week, for $500 once. Built by one person, not an agency.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Byanov Web Solutions">
+<meta property="og:description" content="A five-page website for your business,
+$500 flat, live in a week.">
+<link rel="canonical" href="https://byanovwebsolutions3.xyz/">
 <style>
-:root{color-scheme:light}
+:root{color-scheme:light;--ink:#16202b;--paper:#f2f3ef;--sheet:#fff;
+--graphite:#56606d;--rule:#d5d8d0;--blue:#14508c;--measure:62ch}
 *{box-sizing:border-box}
-body{font:17px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
-margin:0;color:#16181d;background:#fbfbfa}
-.wrap{max-width:38rem;margin:0 auto;padding:14vh 1.5rem 6rem}
-h1{font-size:1.9rem;line-height:1.2;margin:0 0 .6rem;letter-spacing:-.02em}
-p{margin:0 0 1.1rem}
-.lede{font-size:1.15rem;color:#3d424b}
-.card{border:1px solid #e4e4e1;border-radius:10px;padding:1.2rem 1.4rem;
-background:#fff;margin:2rem 0}
-.price{font-size:1.5rem;font-weight:600;margin:0 0 .3rem}
-a{color:#1d4ed8}
-footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid #e4e4e1;
-font-size:.85rem;color:#6b7280}
-footer a{color:#6b7280}
-</style></head>
-<body><div class="wrap">
-<h1>Byanov Web Solutions</h1>
-<p class="lede">I build websites for small businesses that do the work and never
-got round to the website.</p>
-<div class="card">
-<p class="price">$500 flat</p>
-<p>A 5-page mobile-first website, copy written, live in 7 days, one round of revisions included.</p>
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+font:19px/1.6 Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif}
+h1,h2,h3,.wordmark,.price,label,button,.steps li::before{
+font-family:"Arial Black","Arial Bold",Arial,Helvetica,sans-serif;font-weight:900}
+.page{max-width:calc(var(--measure) + 9rem);margin:0 auto;padding:0 1.4rem}
+main,p,.lede{max-width:var(--measure)}
+a{color:var(--blue);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+padding:2.4rem 0 1.4rem}
+.wordmark{font-size:.95rem;letter-spacing:.09em;text-transform:uppercase}
+.where{font-size:.86rem;color:var(--graphite)}
+section{padding:2.9rem 0;border-top:1px solid var(--rule)}
+section.open{border-top:0;padding-top:1.2rem}
+h1{font-size:clamp(1.95rem,5.4vw,3.05rem);line-height:1.04;letter-spacing:-.035em;
+margin:0 0 1.1rem}
+h2{font-size:1.1rem;letter-spacing:-.01em;margin:0 0 1rem}
+h3{font-size:.98rem;margin:0 0 .2rem}
+p{margin:0 0 1.05rem}
+.lede{font-size:1.15rem;color:#2c3642}
+.tape{position:fixed;left:0;top:0;bottom:0;width:15px;z-index:3;
+pointer-events:none;border-right:1px solid var(--rule);background:
+repeating-linear-gradient(to bottom,var(--rule) 0 1px,transparent 1px 26px)}
+.tape i{position:absolute;inset:0;background:var(--blue);opacity:.8;
+transform-origin:top;transform:scaleY(var(--p,0))}
+@media(max-width:900px){.tape{display:none}}
+/* The quote. The one loud thing on the page: a dark sheet that steps outside
+   the text column, because the price is the question every visitor arrived
+   with. Everything else stays quiet on purpose. */
+.quote{background:var(--ink);color:#f7f8f6;margin:1.6rem 0 1.4rem;
+padding:1.9rem 1.4rem 1.3rem;max-width:none}
+@media(min-width:820px){.quote{width:calc(100% + 4.6rem);margin-left:-2.3rem;
+padding:2.3rem 2.3rem 1.7rem}}
+.price{font-size:clamp(2.9rem,11vw,4.5rem);line-height:.88;letter-spacing:-.05em;
+margin:0}
+.price small{display:block;margin-top:.65rem;font:400 1rem/1.5 Georgia,serif;
+letter-spacing:0;color:#a9b6c4}
+.rows{list-style:none;margin:1.5rem 0 0;padding:0}
+.rows li{display:flex;justify-content:space-between;gap:1.2rem;padding:.55rem 0;
+border-top:1px solid rgba(255,255,255,.17);font-size:.97rem}
+.rows span{color:#a9b6c4;text-align:right}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;counter-increment:s;padding:0 0 1.35rem 3rem}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-.2rem;
+font-size:1.45rem;color:#7b8494}
+.day{font-size:.84rem;color:var(--graphite)}
+form{background:var(--sheet);border:1px solid var(--rule);padding:1.3rem;
+margin-top:.3rem}
+.f{margin:0 0 1rem}
+label{display:block;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;
+margin:0 0 .35rem}
+input,select,textarea{width:100%;font:17px/1.5 Georgia,serif;color:var(--ink);
+background:#fff;border:1px solid #82887e;border-radius:0;padding:.62rem .7rem}
+textarea{min-height:7.5rem;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:620px){.two{grid-template-columns:1fr}}
+button{background:var(--ink);color:#fff;border:0;padding:.85rem 1.7rem;
+font-size:1rem;cursor:pointer}
+button:hover{background:#243343}
+.hint{font-size:.85rem;color:var(--graphite);margin:.8rem 0 0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#thanks{display:none}
+#thanks:target{display:block;background:#fff;border:1px solid var(--rule);
+border-left:4px solid var(--blue);padding:1rem 1.2rem;margin:0 0 1.3rem}
+footer{border-top:1px solid var(--rule);padding:1.5rem 0 3.5rem;font-size:.88rem;
+color:var(--graphite)}
+footer a{color:var(--graphite)}
+.sig{color:var(--ink)}
+/* Reveal state is gated behind .js, which only exists once the script has run.
+   Without it every block is visible from the first paint, so a blocked or
+   broken script degrades to a plain page instead of a blank one. */
+.js .rv{opacity:0;transform:translateY(14px)}
+.js .rv.in{opacity:1;transform:none;
+transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.js .rows li{opacity:0;transform:translateY(7px)}
+.js .rows.in li{opacity:1;transform:none;
+transition:opacity .42s ease var(--d,0s),transform .42s ease var(--d,0s)}
+@media(prefers-reduced-motion:reduce){
+.js .rv,.js .rv.in,.js .rows li,.js .rows.in li{opacity:1;transform:none;
+transition:none}
+.tape i{transform:scaleY(1)}}
+@media print{.tape,form,button{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="tape" aria-hidden="true"><i></i></div>
+<div class="page">
+<header class="top">
+<p class="wordmark">Byanov Web Solutions</p>
+<p class="where">Sofia, Bulgaria</p>
+</header>
+<main>
+<section class="open">
+<h1>You do the work. The website has been on the list for three years.</h1>
+<p class="lede">I build small websites for people who are too busy doing the job
+to sit through an agency pitch. Five pages, written for your business, live in a
+week, $500 once.</p>
+</section>
+<section class="rv">
+<h2>What it costs</h2>
+<div class="quote">
+<p class="price">$500<small>Flat, once, agreed before anything starts. Not a
+deposit, not a monthly fee, not a figure that grows once you are interested.</small></p>
+<ul class="rows"><li>Five pages, written and built for your business<span>included</span></li><li>Works on a phone before it works anywhere else<span>included</span></li><li>Live within seven days of saying yes<span>included</span></li><li>One round of changes after you see it<span>included</span></li><li>Domain and hosting, in your name<span>yours, not mine</span></li><li>Monthly fee, retainer, contract<span>none</span></li></ul>
 </div>
-<p>If you were sent a preview built for your business, that link opens a page
-made only for you. Nothing is published, indexed or billed unless you say so.</p>
-<p>Reply and you get me, not a queue: <a href="mailto:ivan@byanovwebsolutions3.xyz">ivan@byanovwebsolutions3.xyz</a> &middot; 359877152900</p>
+<p>That is the whole number. If what you want is bigger than five pages I will
+say so before you pay anything, not after.</p>
+</section>
+<section class="rv">
+<h2>How it works</h2>
+<ol class="steps">
+<li><h3>You say what you need</h3>
+<p class="day">Two minutes. No call, no meeting.</p>
+<p>The form below is enough. If you would rather talk, the number is at the
+bottom of this page and it rings my phone.</p></li>
+<li><h3>I build the pages and send you the link</h3>
+<p class="day">The next few days.</p>
+<p>Not a mockup and not a template with your name dropped into it. The real
+pages, at a real address, which you open on your own phone before you decide
+anything at all.</p></li>
+<li><h3>You approve it and it goes live on your own domain</h3>
+<p class="day">The same week.</p>
+<p>Registered in your name, with one round of changes included. If you say no,
+nothing is published, nothing is charged, and you do not hear from me again.</p></li>
+</ol>
+</section>
+<section class="rv" id="book">
+<h2>Book a website</h2>
+<div id="thanks">
+<p>Your request is with me. I read these myself and answer the same day. Sending
+it commits you to nothing and pays for nothing.</p>
+</div>
+<p>Tell me what you need here. You do not have to write an email, book a call or speak to anyone to find out what this looks like for your business.</p>
+<form action="https://formsubmit.co/ivan@byanovwebsolutions3.xyz" method="POST">
+<input type="hidden" name="_subject" value="Website request from Byanov Web Solutions">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://byanovwebsolutions3.xyz/#thanks">
+<div class="hp"><label for="hp">Leave this empty</label>
+<input id="hp" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+<div class="two">
+<p class="f"><label for="business">Business name</label>
+<input id="business" name="Business" type="text" required autocomplete="organization"></p>
+<p class="f"><label for="trade">What you do</label>
+<input id="trade" name="Trade" type="text" required placeholder="Plumbing, roofing, salon"></p>
+</div>
+<div class="two">
+<p class="f"><label for="who">Your name</label>
+<input id="who" name="Name" type="text" required autocomplete="name"></p>
+<p class="f"><label for="town">Town</label>
+<input id="town" name="Town" type="text" autocomplete="address-level2"></p>
+</div>
+<div class="two">
+<p class="f"><label for="email">Email</label>
+<input id="email" name="email" type="email" required autocomplete="email"></p>
+<p class="f"><label for="phone">Phone, if you would rather I called</label>
+<input id="phone" name="Phone" type="tel" inputmode="tel" autocomplete="tel"></p>
+</div>
+<p class="f"><label for="have">Website you have now, if any</label>
+<input id="have" name="Current site" type="text" inputmode="url"
+placeholder="Leave empty if there is none"></p>
+<p class="f"><label for="details">What the site needs to do</label>
+<textarea id="details" name="Details" required placeholder="Five pages, photos of finished jobs, my phone number at the top, and it has to work properly on a phone."></textarea></p>
+<p class="f"><label for="when">When you want it live</label>
+<select id="when" name="Timing">
+<option>As soon as you can</option>
+<option>This month</option>
+<option>Next month or later</option>
+<option>Just the price for now</option>
+</select></p>
+<p><button type="submit">Send the request</button></p>
+<p class="hint">Nothing is signed and nothing is charged by sending this. I read
+it myself and reply with a plan, a date and the same price as above.</p>
+</form>
+</section>
+<section class="rv">
+<h2>Why it costs this little, and why you heard from me at all</h2>
+<p>Two fair questions, and both deserve the answer before you ask. The price: I
+work on my own from Sofia, Bulgaria, with no office, no sales team and nobody between you and the person
+building the thing. Five pages is a week of my time. It is inexpensive because my
+costs are, not because a part of it is missing and priced later.</p>
+<p>The email: I look for businesses with no website, or one that falls apart on a
+phone. I build the page first and write afterwards, which is why the link you were
+sent already had your own name on it. If it is not for you, one word back is
+enough — or use the link at the end of this page — and that is the end of it.</p>
+<p>There are no client logos here and no testimonials. I am not going to put
+somebody else's business name on this page to sell you yours. What you can check
+instead: the address that emailed you and the address of this page are the same
+domain, and both of them answer.</p>
+</section>
+</main>
 <footer>
-<p>Ivan Byanov, Byanov Web Solutions<br>Bulgaria,Sofia region,etropole city,kv 8,blok 15</p>
+<p class="sig">Ivan Byanov, Byanov Web Solutions</p>
+<p>Email <a href="mailto:ivan@byanovwebsolutions3.xyz">ivan@byanovwebsolutions3.xyz</a><br>Phone +359 877 152 900</p>
 <p><a href="/unsubscribe/">Do not contact me again</a></p>
 </footer>
+<script>
+document.documentElement.className+=" js";
+(function(){
+var slow=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var fill=document.querySelector(".tape i"),queued=0;
+function measure(){
+  queued=0;
+  if(!fill)return;
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  fill.style.setProperty("--p",h>8?Math.min(1,window.pageYOffset/h).toFixed(4):1);
+}
+window.addEventListener("scroll",function(){
+  if(!queued){queued=1;requestAnimationFrame(measure);}
+},{passive:true});
+window.addEventListener("resize",measure,{passive:true});
+measure();
+var blocks=document.querySelectorAll(".rv,.rows");
+function show(el){
+  if(el.className.indexOf("rows")>-1)
+    [].forEach.call(el.children,function(li,i){
+      li.style.setProperty("--d",(i*70)+"ms");
+    });
+  el.className+=" in";
+}
+if(slow||!window.IntersectionObserver){
+  [].forEach.call(blocks,show);
+  return;
+}
+var seen=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting)return;
+    show(e.target);
+    seen.unobserve(e.target);
+  });
+},{rootMargin:"0px 0px -10% 0px",threshold:0.1});
+[].forEach.call(blocks,function(el){seen.observe(el);});
+})();
+</script>
 </div></body></html>
