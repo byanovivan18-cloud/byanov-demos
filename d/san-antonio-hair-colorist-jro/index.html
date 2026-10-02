@@ -24,6 +24,12 @@ svg,iframe{display:block;max-width:100%}
 .d{font-family:var(--fd),Georgia,serif;font-weight:var(--dw)}
 .mock{background:var(--fg);color:var(--bg);font-size:12.5px;line-height:1.4;text-align:center;padding:7px 16px;letter-spacing:.01em}
 .mock b{font-weight:600}
+.own{position:sticky;bottom:0;z-index:50;background:#111;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14.5px;line-height:1.45;box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+.own .in{max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.own p{margin:0;max-width:720px}
+.own b{font-weight:700}
+.own a.go{display:inline-block;background:#fff;color:#111;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;white-space:nowrap}
+.own small{display:block;opacity:.75;font-size:12.5px}
 .map{width:100%;height:100%;min-height:280px;border:0;filter:grayscale(.35) contrast(1.02)}
 .foot{padding:36px 0 44px;font-size:14px;color:var(--muted);border-top:1px solid rgba(var(--fg-rgb),.12)}
 .foot .row{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;margin-bottom:18px}
@@ -82,7 +88,7 @@ section.blk{padding:80px 0}
 </style>
 </head>
 <body class="f-barber">
-<div class="mock">Free concept mock-up made for <b>San Antonio Hair Colorist JRo</b> &middot; not their official website</div>
+<div class="mock">Free concept mock-up made for <b>San Antonio Hair Colorist JRo</b> by Ivan Byanov &middot; not the official website</div>
 <div class="bar">
   <div class="wrap">
     <a href="#"><b>SA</b> &middot; San Antonio</a>
@@ -128,13 +134,13 @@ section.blk{padding:80px 0}
     <div>
       <h2>Come by</h2>
       <p class="addr">300 West Bitters Road<small>San Antonio, TX</small></p>
-      <p style="color:var(--muted)">Call ahead on <a href="tel:+14328948533">+1-432-894-8533</a> to check the chair is free.</p>
+      <table class="hours"><tr><td>Tue–Fri</td><td>8am–5:30pm</td></tr><tr><td>Sat</td><td>10am–3pm</td></tr></table>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
         <a class="btn" href="tel:+14328948533"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>+1-432-894-8533</span></a>
 
-<a class="line-btn" href="https://www.google.com/maps/search/?api=1&amp;query=San+Antonio+Hair+Colorist+JRo%2C+300+West+Bitters+Road%2C+San+Antonio%2C+TX" target="_blank" rel="noopener">Directions</a>      </div>
+<a class="line-btn" href="https://www.google.com/maps/search/?api=1&amp;query=29.568103%2C-98.487884" target="_blank" rel="noopener">Directions</a>      </div>
     </div>
-<div class="mapbox"><iframe class="map" src="https://maps.google.com/maps?q=San+Antonio+Hair+Colorist+JRo%2C+300+West+Bitters+Road%2C+San+Antonio%2C+TX&amp;z=15&amp;output=embed" loading="lazy" title="Map of San Antonio Hair Colorist JRo" referrerpolicy="no-referrer-when-downgrade"></iframe></div>  </div>
+<div class="mapbox"><iframe class="map" src="https://maps.google.com/maps?q=29.568103%2C-98.487884&amp;z=15&amp;output=embed" loading="lazy" title="Map of San Antonio Hair Colorist JRo" referrerpolicy="no-referrer-when-downgrade"></iframe></div>  </div>
 </section>
 <footer class="foot">
   <div class="wrap">
@@ -142,8 +148,13 @@ section.blk{padding:80px 0}
       <span><b>San Antonio Hair Colorist JRo</b> &middot; Barbershop</span>
       <span>300 West Bitters Road, San Antonio, TX &middot; <a href="tel:+14328948533">+1-432-894-8533</a></span>
     </div>
-    <small>&copy; 2026 San Antonio Hair Colorist JRo. This page is an unsolicited free concept mock-up prepared for San Antonio Hair Colorist JRo. It is not affiliated with or endorsed by the business, is set to noindex, and will be taken down on request or automatically after 21 days.</small>
+    <small>&copy; 2026 San Antonio Hair Colorist JRo. This page is an unsolicited free concept mock-up prepared for San Antonio Hair Colorist JRo. It is not affiliated with or endorsed by the business, is set to noindex, and is taken down on request.</small>
   </div>
-</footer>
-</body>
+</footer><aside class="own" aria-label="About this page">
+  <div class="in">
+    <p><b>I made this for San Antonio Hair Colorist JRo.</b> Want it as your real website? $500 once, live within a week, on your own domain. You pay only once it is live and you are happy with it.
+      <small>Ivan Byanov, Byanov Web Solutions &middot; or just reply to my email</small></p>
+    <a class="go" href="mailto:ivan@byanovwebsolutions3.xyz?subject=Yes%20-%20website%20for%20San%20Antonio%20Hair%20Colorist%20JRo&amp;body=Hi%20Ivan%2C%0A%0AI%20saw%20the%20page%20you%20made%20for%20San%20Antonio%20Hair%20Colorist%20JRo%20and%20I%20would%20like%20it%20as%20our%20website.%0A%0ABest%20time%20to%20reach%20me%3A%0A">Yes, I want this</a>
+  </div>
+</aside></body>
 </html>
