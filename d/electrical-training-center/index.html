@@ -24,6 +24,12 @@ svg,iframe{display:block;max-width:100%}
 .d{font-family:var(--fd),Georgia,serif;font-weight:var(--dw)}
 .mock{background:var(--fg);color:var(--bg);font-size:12.5px;line-height:1.4;text-align:center;padding:7px 16px;letter-spacing:.01em}
 .mock b{font-weight:600}
+.own{position:sticky;bottom:0;z-index:50;background:#111;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14.5px;line-height:1.45;box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+.own .in{max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.own p{margin:0;max-width:720px}
+.own b{font-weight:700}
+.own a.go{display:inline-block;background:#fff;color:#111;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;white-space:nowrap}
+.own small{display:block;opacity:.75;font-size:12.5px}
 .map{width:100%;height:100%;min-height:280px;border:0;filter:grayscale(.35) contrast(1.02)}
 .foot{padding:36px 0 44px;font-size:14px;color:var(--muted);border-top:1px solid rgba(var(--fg-rgb),.12)}
 .foot .row{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;margin-bottom:18px}
@@ -124,7 +130,7 @@ section.blk{padding:76px 0}
 </style>
 </head>
 <body class="f-service">
-<div class="mock">Free concept mock-up made for <b>Electrical Training Center</b> &middot; not their official website</div>
+<div class="mock">Free concept mock-up made for <b>Electrical Training Center</b> by Ivan Byanov &middot; not the official website</div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#">
@@ -157,8 +163,7 @@ section.blk{padding:76px 0}
 
 <div class="facts">
   <div class="wrap">
-<div class="fact"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><div><small>Phone</small><b><a href="tel:+17136492739">+1-713-649-2739</a></b></div></div><div class="fact"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><div><small>Address</small><b>108 Covern Street, </b></div></div>
-  </div>
+<div class="fact"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><div><small>Phone</small><b><a href="tel:+17136492739">+1-713-649-2739</a></b></div></div><div class="fact"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><div><small>Based in</small><b></b></div></div>  </div>
 </div>
 
 <section class="blk" id="services">
@@ -187,11 +192,10 @@ section.blk{padding:76px 0}
       <p class="kick">Where we work</p>
       <h2 class="h2"></h2>
       <p class="area-p">Based in your area and working across the surrounding area.</p>
-<ul class="towns">
+    </div>
+<ul class="towns big-towns">
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></li>
-      </ul>    </div>
-<div class="mapbox"><iframe class="map" src="https://maps.google.com/maps?q=Electrical+Training+Center%2C+108+Covern+Street%2C+%2C+&amp;z=15&amp;output=embed" loading="lazy" title="Map of Electrical Training Center" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-  </div>
+    </ul>  </div>
 </section>
 
 <section class="close">
@@ -207,10 +211,15 @@ section.blk{padding:76px 0}
   <div class="wrap">
     <div class="row">
       <span><b>Electrical Training Center</b> &middot; Electrical</span>
-      <span>108 Covern Street,  &middot; <a href="tel:+17136492739">+1-713-649-2739</a></span>
+      <span> &middot; <a href="tel:+17136492739">+1-713-649-2739</a></span>
     </div>
-    <small>&copy; 2026 Electrical Training Center. This page is an unsolicited free concept mock-up prepared for Electrical Training Center. It is not affiliated with or endorsed by the business, is set to noindex, and will be taken down on request or automatically after 21 days.</small>
+    <small>&copy; 2026 Electrical Training Center. This page is an unsolicited free concept mock-up prepared for Electrical Training Center. It is not affiliated with or endorsed by the business, is set to noindex, and is taken down on request.</small>
   </div>
-</footer>
-</body>
+</footer><aside class="own" aria-label="About this page">
+  <div class="in">
+    <p><b>I made this for Electrical Training Center.</b> Want it as your real website? $500 once, live within a week, on your own domain. You pay only once it is live and you are happy with it.
+      <small>Ivan Byanov, Byanov Web Solutions &middot; or just reply to my email</small></p>
+    <a class="go" href="mailto:ivan@byanovwebsolutions3.xyz?subject=Yes%20-%20website%20for%20Electrical%20Training%20Center&amp;body=Hi%20Ivan%2C%0A%0AI%20saw%20the%20page%20you%20made%20for%20Electrical%20Training%20Center%20and%20I%20would%20like%20it%20as%20our%20website.%0A%0ABest%20time%20to%20reach%20me%3A%0A">Yes, I want this</a>
+  </div>
+</aside></body>
 </html>
